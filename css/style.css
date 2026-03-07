@@ -1,0 +1,113 @@
+body {
+    background: linear-gradient(#ffe6f0,#ffd6eb);
+    font-family: Arial;
+    text-align:center;
+    transition:0.5s;
+    overflow-x:hidden;
+}
+
+body.night{
+    background: linear-gradient(#0f2027,#203a43,#2c5364);
+    color:white;
+}
+
+/* TITLE */
+
+h1{
+    color:#ff3366;
+    margin-top:40px;
+}
+
+/* POLAROID GALLERY */
+
+.gallery{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    margin-top:40px;
+}
+
+.polaroid{
+    background:white;
+    padding:10px;
+    margin:20px;
+    width:220px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.2);
+    transform:rotate(-2deg);
+    transition:0.3s;
+}
+
+.polaroid:nth-child(even){
+    transform:rotate(3deg);
+}
+
+.polaroid:hover{
+    transform:scale(1.1) rotate(0deg);
+}
+
+.polaroid img{
+    width:100%;
+}
+
+/* HEARTS */
+
+.hearts{
+    margin-top:60px;
+}
+
+.heart{
+    font-size:40px;
+    cursor:pointer;
+    margin:15px;
+}
+
+.message{
+    display:none;
+    font-size:18px;
+    margin-top:10px;
+    color:#444;
+}
+
+/* NIGHT BUTTON */
+
+.toggle{
+    position:fixed;
+    top:20px;
+    right:20px;
+    padding:10px 15px;
+    border:none;
+    border-radius:20px;
+    cursor:pointer;
+}
+
+/* FLOATING HEARTS */
+
+.floating-heart{
+    position:fixed;
+    bottom:-50px;
+    font-size:20px;
+    animation:float 8s linear infinite;
+}
+
+@keyframes float{
+    0%{
+        transform:translateY(0);
+        opacity:1;
+    }
+    100%{
+        transform:translateY(-100vh);
+        opacity:0;
+    }
+}
+
+/* SECRET MESSAGE */
+
+.secret{
+    margin-top:50px;
+}
+
+#secretMessage{
+    display:none;
+    margin-top:20px;
+    font-size:20px;
+}
