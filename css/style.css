@@ -111,3 +111,42 @@ h1{
     margin-top:20px;
     font-size:20px;
 }
+
+
+/* NAVBAR */
+
+nav{
+    position: sticky;
+    top:0;
+    background: rgba(255,255,255,0.7);
+    backdrop-filter: blur(10px);
+    padding:15px 0;
+    margin-bottom:30px;
+    box-shadow:0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* NAV LINKS */
+
+nav a{
+    text-decoration:none;
+    margin:0 10px;
+    padding:10px 20px;
+    border-radius:25px;
+    background:linear-gradient(45deg,#ff6fa5,#ff9ac6);
+    color:white;
+    font-weight:bold;
+    transition:0.3s;
+}
+
+/* HOVER EFFECT */
+
+nav a:hover{
+    transform:translateY(-2px) scale(1.05);
+    box-shadow:0 6px 15px rgba(0,0,0,0.2);
+}
+
+/* ACTIVE PAGE */
+
+nav a.active{
+    background:linear-gradient(45deg,#ff3366,#ff6fa5);
+}
