@@ -31,9 +31,22 @@ function createHeart(){
 function checkPassword(){
     let password=document.getElementById("pw").value;
 
-    if(password==="iloveyou"){
+    if(password==="10.10.2025"){
         document.getElementById("secretMessage").style.display="block";
     }else{
         alert("Wrong password ❤️");
     }
+}
+
+function unlockPhoto(inputId, photoId, password){
+
+    let entered = document.getElementById(inputId).value;
+
+    if(entered === password){
+        document.getElementById(photoId).style.display = "block";
+    }
+    else{
+        alert("Wrong password ❤️");
+    }
+
 }

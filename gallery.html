@@ -19,8 +19,6 @@
 
     </nav>
 
-    <button class="toggle" onclick="toggleNight()">🌙 Night</button>
-
     <h1>Our Memories ❤️</h1>
 
     <div class="gallery">
@@ -44,6 +42,43 @@
             <img src="images/IMG_6015.jpeg">
             <p>Our first picture as a couple(?)</p>
         </div>
+
+        <div class="polaroid">
+            <img src="images/IMG_6652.jpeg">
+            <p>Always so loving and caring</p>
+        </div>
+
+    </div>
+
+    <h2>Secret Memories 🔒</h2>
+
+        <div>
+
+            <input type="password" id="pw1" placeholder="When did we get together? (TT.MM.YYYY)">
+            <button onclick="unlockPhoto('pw1','sleeping_beauty','10.10.2025')">Unlock</button>
+
+            <br><br>
+            
+            <div class="polaroid" id="sleeping_beauty">
+                <img src="images/IMG_6317.jpeg">
+                <p>Sleeping beauty!</p>
+            </div>
+
+        </div>
+
+        <br>
+
+        <div>
+
+            <input type="password" id="pw2" placeholder="To which city did we go for our first trip?">
+            <button onclick="unlockPhoto('pw2','warschau','warschau')">Unlock</button>
+
+            <br><br>
+
+            <div class="polaroid" id="warschau">
+                <img src="images/IMG_5421.jpeg">
+                <p>Standing too close🤭! Making me fall in love xaxaxa</p>
+            </div>
 
     </div>
 
