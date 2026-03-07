@@ -4,10 +4,16 @@
 <title> Подарок для моей любимой ❤️</title>
 <style>
 body {
+    background: linear-gradient(#ffe6f0,#ffd6eb);
     font-family: Arial;
-    text-align: center;
-    background: #ffe6f0;
-    padding: 40px;
+    text-align:center;
+    transition:0.5s;
+    overflow-x:hidden;
+}
+
+body.night{
+    background: linear-gradient(#0f2027,#203a43,#2c5364);
+    color:white;
 }
 
 /* TITLE */
@@ -67,6 +73,50 @@ h1{
     color:#444;
 }
 
+/* NIGHT BUTTON */
+
+.toggle{
+    position:fixed;
+    top:20px;
+    right:20px;
+    padding:10px 15px;
+    border:none;
+    border-radius:20px;
+    cursor:pointer;
+}
+
+/* FLOATING HEARTS */
+
+.floating-heart{
+    position:fixed;
+    bottom:-50px;
+    font-size:20px;
+    animation:float 8s linear infinite;
+}
+
+@keyframes float{
+    0%{
+        transform:translateY(0);
+        opacity:1;
+    }
+    100%{
+        transform:translateY(-100vh);
+        opacity:0;
+    }
+}
+
+/* SECRET MESSAGE */
+
+.secret{
+    margin-top:50px;
+}
+
+#secretMessage{
+    display:none;
+    margin-top:20px;
+    font-size:20px;
+}
+
 </style>
 </head>
 
@@ -123,14 +173,58 @@ I can't wait to make more memories with you.
 
 </div>
 
+<div class="secret">
+
+<h2>🔒 Secret Message</h2>
+
+<input type="password" id="pw" placeholder="Enter password">
+<button onclick="checkPassword()">Unlock</button>
+
+<div id="secretMessage">
+You are the love of my life ❤️
+</div>
+
+</div>
+
 <script>
 
+/* HEART MESSAGE */
+
 function toggleMessage(id){
-    var msg = document.getElementById(id);
-    if(msg.style.display === "block"){
-        msg.style.display = "none";
-    } else {
-        msg.style.display = "block";
+    let msg = document.getElementById(id);
+    msg.style.display = msg.style.display === "block" ? "none" : "block";
+}
+
+/* NIGHT MODE */
+
+function toggleNight(){
+    document.body.classList.toggle("night");
+}
+
+/* FLOATING HEARTS */
+
+setInterval(createHeart,800);
+
+function createHeart(){
+    const heart=document.createElement("div");
+    heart.className="floating-heart";
+    heart.innerHTML="❤️";
+    heart.style.left=Math.random()*100+"vw";
+    heart.style.fontSize=(20+Math.random()*20)+"px";
+    document.body.appendChild(heart);
+
+    setTimeout(()=>{heart.remove();},8000);
+}
+
+/* PASSWORD */
+
+function checkPassword(){
+    let password=document.getElementById("pw").value;
+
+    if(password==="iloveyou"){
+        document.getElementById("secretMessage").style.display="block";
+    }else{
+        alert("Wrong password ❤️");
     }
 }
 
