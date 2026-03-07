@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title> Подарок для моей дорогой булочки ❤️</title>
+<title> Подарок для моей любимой ❤️</title>
 <style>
 body {
     font-family: Arial;
@@ -10,32 +10,128 @@ body {
     padding: 40px;
 }
 
-h1 {
-    color: #ff3366;
+/* TITLE */
+
+h1{
+    color:#ff3366;
+    margin-top:40px;
 }
 
-img {
-    width: 300px;
-    border-radius: 15px;
-    margin-top: 20px;
+/* POLAROID GALLERY */
+
+.gallery{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    margin-top:40px;
 }
+
+.polaroid{
+    background:white;
+    padding:10px;
+    margin:20px;
+    width:220px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.2);
+    transform:rotate(-2deg);
+    transition:0.3s;
+}
+
+.polaroid:nth-child(even){
+    transform:rotate(3deg);
+}
+
+.polaroid:hover{
+    transform:scale(1.1) rotate(0deg);
+}
+
+.polaroid img{
+    width:100%;
+}
+
+/* HEARTS */
+
+.hearts{
+    margin-top:60px;
+}
+
+.heart{
+    font-size:40px;
+    cursor:pointer;
+    margin:15px;
+}
+
+.message{
+    display:none;
+    font-size:18px;
+    margin-top:10px;
+    color:#444;
+}
+
 </style>
 </head>
 
 <body>
 
-<h1>Hi my love ❤️</h1>
+<h1>Our Memories ❤️</h1>
 
-<p>
-This page is just for you.<br>
-Every time you open it, I might add something new.
-</p>
+<div class="gallery">
 
-<img src="photo.jpg">
+<div class="polaroid">
+<img src="images/pic1.jpg">
+<p>Our first adventure</p>
+</div>
 
-<p>
-You make my world brighter every day ✨
-</p>
+<div class="polaroid">
+<img src="images/pic2.jpg">
+<p>One of my favorite days</p>
+</div>
+
+<div class="polaroid">
+<img src="images/pic3.jpg">
+<p>You make everything better</p>
+</div>
+
+</div>
+
+<h1>Click a Heart 💌</h1>
+
+<div class="hearts">
+
+<div>
+<span class="heart" onclick="toggleMessage('m1')">❤️</span>
+<div id="m1" class="message">
+You are my favorite person in the world.
+</div>
+</div>
+
+<div>
+<span class="heart" onclick="toggleMessage('m2')">💖</span>
+<div id="m2" class="message">
+Every day with you feels like a gift.
+</div>
+</div>
+
+<div>
+<span class="heart" onclick="toggleMessage('m3')">💕</span>
+<div id="m3" class="message">
+I can't wait to make more memories with you.
+</div>
+</div>
+
+</div>
+
+<script>
+
+function toggleMessage(id){
+    var msg = document.getElementById(id);
+    if(msg.style.display === "block"){
+        msg.style.display = "none";
+    } else {
+        msg.style.display = "block";
+    }
+}
+
+</script>
 
 </body>
 </html>
