@@ -48,5 +48,9 @@ function unlockPhoto(inputId, photoId, password){
     else{
         alert("Wrong password ❤️");
     }
+}
 
+function flipCard(card){
+    const inner = card.querySelector(".flip-card-inner");
+    inner.classList.toggle("flipped");
 }
