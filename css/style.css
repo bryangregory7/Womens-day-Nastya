@@ -205,7 +205,7 @@ nav a.active{
 .flip-card {
     background: none;
     width: 160px;
-    height: 100px;
+    height: 220px;
     perspective: 1000px;
     cursor: pointer;
     position: relative;
