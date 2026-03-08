@@ -43,7 +43,7 @@ function unlockPhoto(inputId, photoId, password){
     let entered = document.getElementById(inputId).value;
 
     if(entered === password){
-        document.getElementById(photoId).style.display = "block";
+        document.getElementById(photoId).style.display = "flex";
     }
     else{
         alert("Wrong password ❤️");
